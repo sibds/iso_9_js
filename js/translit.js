@@ -162,7 +162,7 @@ function simpleTranslit(value){
   return translit(value, 5);
 }
 
-$.ready(function(){  
+jQuery(function($){  
   $('.sourceTranslit').on('change focusout', function(){
     var prefix = $('.resultTranslit').data('prefix');
     var suffix = $('.resultTranslit').data('suffix');
