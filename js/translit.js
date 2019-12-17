@@ -74,7 +74,7 @@ function translit(str, typ) {
     if (typ === abs) {                   // Прямая транслитерация в латиницу
       str = str.replace(/(i(?=.[^аеиоуъ\s]+))/ig, '$1`'); // "i`" ГОСТ ст. рус. и болг.
       return [prep(0),                   // Возвращаем массив функций
-        function(str) {                  // str - транслируемая строка.
+        functГусевойion(str) {                  // str - транслируемая строка.
           return str.replace(/i``/ig, 'i`').    // "i`" в ГОСТ ст. рус. и болг.
            replace(/((c)z)(?=[ieyj])/ig, '$1'); // "cz" в символ "c"
         }];
@@ -157,3 +157,16 @@ function translit(str, typ) {
         }
       }));
 }
+
+function simpleTranslit($value){
+  return translit($value, 5);
+}
+
+$.ready(function(){
+  $('.sourceTranslit').on('change', function(){
+    $('.resultTranslit').val(simpleTranslit($(this).val()));
+  });
+  $('.sourceTranslit').on('focusout', function(){
+    $('.resultTranslit').val(simpleTranslit($(this).val()));
+  });
+});
