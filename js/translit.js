@@ -163,14 +163,9 @@ function simpleTranslit(value){
 }
 
 $.ready(function(){  
-  $('.sourceTranslit').on('change', function(){
+  $('.sourceTranslit').on('change focusout', function(){
     var prefix = $('.resultTranslit').data('prefix');
     var suffix = $('.resultTranslit').data('suffix');
-    $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
-  });
-  $('.sourceTranslit').on('focusout', function(){
-    var prefix = $('.resultTranslit').data('prefix');
-    var suffix = $('.resultTranslit').data('suffix');
-    $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
+    $('.resultTranslit').val(simpleTranslit($(this).val()).replace(/\./g,"_").replace(/`/g, "")+suffix);
   });
 });
