@@ -158,16 +158,18 @@ function translit(str, typ) {
       }));
 }
 
-function simpleTranslit($value){
-  return translit($value, 5);
+function simpleTranslit(value){
+  return translit(value, 5);
 }
 
 $.ready(function(){  
   $('.sourceTranslit').on('change', function(){
+    var prefix = $('.resultTranslit').data('prefix');
     var suffix = $('.resultTranslit').data('suffix');
     $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
   });
   $('.sourceTranslit').on('focusout', function(){
+    var prefix = $('.resultTranslit').data('prefix');
     var suffix = $('.resultTranslit').data('suffix');
     $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
   });
