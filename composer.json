@@ -1,7 +1,8 @@
 {
     "name": "sibds/iso_9_js",
     "description": "Forward and reverse transliteration according to ISO 9 or ISO 9: 1995 or GOST 7.79-2000 system of A and B",
-    "type": "library",    
+    "type": "library",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "xguest",
