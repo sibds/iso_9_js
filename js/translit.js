@@ -162,11 +162,13 @@ function simpleTranslit($value){
   return translit($value, 5);
 }
 
-$.ready(function(){
+$.ready(function(){  
   $('.sourceTranslit').on('change', function(){
-    $('.resultTranslit').val(simpleTranslit($(this).val()));
+    var suffix = $('.resultTranslit').data('suffix');
+    $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
   });
   $('.sourceTranslit').on('focusout', function(){
-    $('.resultTranslit').val(simpleTranslit($(this).val()));
+    var suffix = $('.resultTranslit').data('suffix');
+    $('.resultTranslit').val(simpleTranslit($(this).val())+suffix);
   });
 });
