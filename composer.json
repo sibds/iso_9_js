@@ -1,0 +1,22 @@
+{
+    "name": "sibds/iso_9_js",
+    "description": "Forward and reverse transliteration according to ISO 9 or ISO 9: 1995 or GOST 7.79-2000 system of A and B",
+    "type": "library",
+    "license": "commercial",
+    "authors": [
+        {
+            "name": "xguest",
+            "email": "xguest@list.ru"
+        },
+        {
+            "name": "Vadim Mazur",
+            "email": "mazurva@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "sibds\\assets\\": ""
+        }
+    }
+}
